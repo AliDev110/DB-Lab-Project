@@ -1,0 +1,46 @@
+﻿@model List<DB_Project.Models.Report1>
+
+<b><h1 class="display-1 text-warning" style="text-align: center">IVOR PAINE MEMORIAL HOSPITAL</h1></b>
+<b><h2 class="display-2 text-warning" style="text-align: center">PATIENT RECORD</h2></b>
+
+<form class="form-inline my-2 my-lg-0">
+    <div class="form-group">
+        <input id="pid" name="PID" class="form-control mr-sm-2" placeholder="Enter Patient ID" aria-label="Search">
+    </div>
+ 
+    <br />
+    <button class="btn btn-outline-warning my-2 my-sm-0 bg-dark" type="submit">Search</button>
+</form>
+
+<br />
+<br />
+
+<h3 style="text-align: center; color:white">Medical History</h3>
+<table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Complaint Code</th>
+            <th scope="col">Treatment Code</th>
+            <th scope="col">Doctor</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.compCode</td>
+                <td>@item.treatCode</td>
+                <td>@item.docName</td>
+                <td>@item.startDate</td>
+                <td>@item.endDate</td>
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
